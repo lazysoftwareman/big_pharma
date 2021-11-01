@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+:root {
+	/* Colors */
+	--giallo: #ffff00;
+	--arancione: #ff8e01;
+	--rosso: #fe0000;
+	--nero: #222222;
+	--borderColor: #222222;
+	--whiteBorder: whitesmoke;
+	--blackColor: #3a3a3a;
+	--selectionColor: #e3af54;
+	--greenPlayer: #1a7077;
+	--redPlayer: #af2a4b;
+	--blackPlayer: #3a3a3a;
+	--whitePlayer: #e6e7e8;
+	--orangePlayer: #de761f;
+	--nullPlayer: #9d734a;
+	--sfondoColor: #e8dcc8;
+	--importantColor: #af2a4b;
+	/* Dimensions */
+	--vh: 1vh;
+	--mh: 1vh;
+	--mw: 1vw;
+  }
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	min-height: -webkit-fill-available;
+	font-size: 1em;
+	background-image: linear-gradient(#fefefe, #ccb454, #439952);
+	color: #422;
+	font-family: Oranienbaum;
+	overflow: hidden;
+	height: 100%;
+    width: 100%;
+	margin: 0;
+}
+#splash {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 100%;
+	min-height: -webkit-fill-available;
+	background-image: linear-gradient(#fefefe, #ccb454, #439952);
+	overflow: hidden;
+	height: 100%;
+    width: 100%;
+	margin: 0;
+	z-index: 10;
+}
+#mainContainer {	
+	/* height: calc(var(--vh)*100); */
+	height: 100%;
+	width: 100%;
+}
+#mappaContainer {
+	height: 100%;
+	width: 100%;	
+	margin-left: auto;
+    margin-right: auto;
+}
+#mappa {
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 100%;
+	width: 100%;
+	font-size: 12pt;
+	border-radius: 4px;
+	display: block;
+    min-width: 250px;
+	text-align: center;
+	background-image: url('../img/BP_world.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+    font-family: Arial;
+}
+#mappa div {
+	border: 4px solid black;
+	background-color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 24px;
+	cursor: pointer;
+	position: absolute;
+}
+
+#Round1 {
+    position: absolute;
+    top: 85%;
+    left: 33%;
+	width: 200px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: var(--selectionColor);
+    border-radius: 6px;
+}
+
+#Testo {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+	width: 500px;
+    height: 40px;
+}
+
+/* CERCHIETTI */
+#UN{
+	top: 15%;
+	left: 19%;
+}
+#US{
+	top: 42%;
+	left: 18%;
+}
+#UO{
+	top: 28%;
+	left: 16%;
+}
+#UE{
+	top: 28%;
+	left: 22%;
+}
+#SN{
+	top: 48%;
+	left: 24%;
+}
+#SS{
+	top: 76%;
+	left: 27%;
+}
+#SO{
+	top: 59%;
+    left: 23.5%;
+}
+#SE{
+	top: 59%;
+	left: 32%;
+}
+#EN{
+	top: 12%;
+	left: 48%;
+}
+#ES{
+	top: 27%;
+	left: 47%;
+}
+#EO{
+    top: 25%;
+    left: 43.5%;
+}
+#EE{
+	top: 20.5%;
+    left: 53.5%;;
+}
+#AFN{
+    top: 34%;
+    left: 47.5%;
+}
+#AFS{
+    top: 67%;
+    left: 50.5%;
+}
+#AFO{	
+    top: 45%;
+    left: 41%;
+}
+#AFE{
+    top: 51%;
+    left: 52%;
+}
+#ASN{
+    top: 16%;
+    left: 66%;
+}
+#ASS{
+    top: 39%;
+    left: 65.5%;
+}
+#ASO{
+    top: 30%;
+    left: 55.5%;
+}
+#ASE{
+    top: 31%;
+    left: 71%;
+}
+#IN{
+    top: 29%;
+    left: 80%;
+}
+#IS{
+    top: 80%;
+    left: 88%;
+}
+#IO{
+    top: 56%;
+    left: 75%;
+}
+#IE{
+    top: 70.5%;
+    left: 79.5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mappaToolbar {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	top: -4.5%;
+	width: calc(var(--mw)*100);
+	height: 4%;
+	/* border: 3px solid var(--blackColor);
+	background-color: #4a4a4a;
+	border-radius: 5px; */
+}
+.azioneButton {	
+	width: calc(var(--mw)*6);
+	height: calc(var(--mw)*6);
+    vertical-align: middle;
+    text-align: center;
+	line-height: calc(var(--mw)*6);
+	font-weight: bold;
+	color: var(--blackColor);
+	background-color: var(--whiteBorder);
+	border: solid 1px var(--borderColor);
+	border-radius: 5px;
+	float: left;
+	cursor: pointer;
+}
+.azioneButton div {	
+    margin: calc(var(--mw)*0.5);
+    width: calc(var(--mw)*5);
+    height: calc(var(--mw)*5);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
