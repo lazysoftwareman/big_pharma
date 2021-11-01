@@ -17,12 +17,17 @@ export function initPage() {
  * @type {number[]}
  */
 export let zone = [];
+/**
+ * @type {number[]}
+ */
+export let cubetti = [];
 
 export let numRound = 0;
 
 export function initZone() {
 	for (const punto of points) {
 		zone[punto] = 0;
+		cubetti[punto] = 0;
 	}
 	numRound = -1;
 }
