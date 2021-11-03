@@ -1,5 +1,5 @@
 // @ts-check
-import { inizializza, round } from './bigpharma.js';
+import { inizializzaNew, round } from './bigpharma.js';
 import { points } from './mappa.js';
 
 // @ts-ignore
@@ -8,7 +8,7 @@ window.initPage = initPage;
 export function initPage() {
 	initZone();
 	for (const punto of points) {
-		document.getElementById(punto).addEventListener('click', function () { inizializza(punto); }, false);
+		document.getElementById(punto).addEventListener('click', function () { inizializzaNew(); }, false);
 	}
 	document.getElementById('Round1').addEventListener('click', round, false);
 }
