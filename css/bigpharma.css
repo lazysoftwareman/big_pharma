@@ -93,10 +93,32 @@ body {
 
 #Round1 {
     position: absolute;
-    top: 85%;
+    top: 83%;
     left: 33%;
-	width: 200px;
-    height: 40px;
+	width: 150px;
+    height: 30px;
+    border: 2px solid black;
+    background-color: var(--selectionColor);
+    border-radius: 6px;
+}
+
+#Auto9 {
+    position: absolute;
+    top: 88%;
+    left: 33%;
+	width: 150px;
+    height: 30px;
+    border: 2px solid black;
+    background-color: var(--selectionColor);
+    border-radius: 6px;
+}
+
+#Medie {
+    position: absolute;
+    top: 93%;
+    left: 33%;
+	width: 150px;
+    height: 30px;
     border: 2px solid black;
     background-color: var(--selectionColor);
     border-radius: 6px;

@@ -202,19 +202,71 @@ export function round() {
 	}
 }
 
+export function auto9() {
+	inizializzaNew();
+	for (let i = 0; i < 8; i++) {
+		round();
+	}
+}
+
+export function medie() {
+	const quanti = 1000;
+	let bianche = 0;
+	let gialle = 0;
+	let arancioni = 0;
+	let rosse = 0;
+	let nere = 0;
+	for (let i=0; i<quanti; i++) {
+		auto9();
+		for (const zona in zone) {
+			if (zone[zona] == 0) {
+				bianche++;
+			} else if (zone[zona] == 1) {
+				gialle++;
+			} else if (zone[zona] == 2) {
+				arancioni++;
+			} else if (zone[zona] == 3) {
+				rosse++;
+			} else {
+				nere++;
+			}
+		}
+	}
+	bianche = bianche/quanti;
+	gialle = gialle/quanti;
+	arancioni = arancioni/quanti;
+	rosse = rosse/quanti;
+	nere = nere/quanti;	
+	document.getElementById('bianche').innerHTML = '' + bianche;
+	document.getElementById('gialle').innerHTML = '' + gialle;
+	document.getElementById('arancioni').innerHTML = '' + arancioni;
+	document.getElementById('rosse').innerHTML = '' + rosse;
+	document.getElementById('nere').innerHTML = '' + nere;
+}
+
 export function mostraZone() {
+	let bianche = 0;
+	let gialle = 0;
+	let arancioni = 0;
+	let rosse = 0;
+	let nere = 0;
 	for (const zona in zone) {
 		const div = document.getElementById(zona);
 		if (zone[zona] == 0) {
 			div.style.backgroundColor = '#ffffff';
+			bianche++;
 		} else if (zone[zona] == 1) {
 			div.style.backgroundColor = 'var(--giallo)';
+			gialle++;
 		} else if (zone[zona] == 2) {
 			div.style.backgroundColor = 'var(--arancione)';
+			arancioni++;
 		} else if (zone[zona] == 3) {
 			div.style.backgroundColor = 'var(--rosso)';
+			rosse++;
 		} else {
 			div.style.backgroundColor = 'var(--nero)';
+			nere++;
 		}
 		if (cubetti[zona]) {
 			div.innerHTML = '' + cubetti[zona];
@@ -223,7 +275,12 @@ export function mostraZone() {
 		}
 	}
 	document.getElementById('numRound').innerHTML = '' + numRound;
-	document.getElementById('modificati').innerHTML = '' + modificati;
+	// document.getElementById('modificati').innerHTML = '' + modificati;
+	document.getElementById('bianche').innerHTML = '' + bianche;
+	document.getElementById('gialle').innerHTML = '' + gialle;
+	document.getElementById('arancioni').innerHTML = '' + arancioni;
+	document.getElementById('rosse').innerHTML = '' + rosse;
+	document.getElementById('nere').innerHTML = '' + nere;
 }
 
 function shuffle(original) {
