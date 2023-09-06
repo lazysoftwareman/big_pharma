@@ -1,6 +1,6 @@
 // @ts-check
 import { aumentaRound, cubetti, initZone, numRound, zone } from './init.js';
-import { links, points } from './mappa.js';
+import { links, points, rotella, colori} from './mappa.js';
 
 export let modificati = 0;
 /**
@@ -123,33 +123,43 @@ export function algoritmoSimilPandemic() {
 	const cartaInfetta = mazzoInfette[0];
 	const cartaPulita = mazzoPulite[0];
 	mazzoPulite.splice(0, 1);
-	// prima pulita
-	if (zone[cartaPulita] < 4) {
-		zone[cartaPulita]++;
-		modificati++;
-	}
-	for (const collegato of links[cartaPulita]) {
-		if (zone[collegato] < 4) {
-			zone[collegato]++;
-			modificati++;
-		}
-	}
-	// poi carta infetta	
-	if (zone[cartaInfetta] < 4) {
-		zone[cartaInfetta]++;
+	// prima infetta
+	if (rotella[cartaInfetta] < 4) {
+		rotella[cartaInfetta]++;
+		const posRot = rotella[cartaInfetta];
+		zone[cartaInfetta] = colori[cartaInfetta][posRot];
 		modificati++;
 	}
 	for (const collegato of links[cartaInfetta]) {
-		if (zone[collegato] < 4) {
-			zone[collegato]++;
+		if (rotella[collegato] < 4) {
+			rotella[collegato]++;
+			const posRot = rotella[collegato];
+			zone[collegato] = colori[collegato][posRot];
+			modificati++;
+		}
+	}
+	// poi carta pulita	
+	if (rotella[cartaPulita] < 4) {
+		rotella[cartaPulita]++;
+		const posRot = rotella[cartaPulita];
+		zone[cartaPulita] = colori[cartaPulita][posRot];
+		modificati++;
+	}
+	for (const collegato of links[cartaPulita]) {
+		if (rotella[collegato] < 4) {
+			rotella[collegato]++;
+			const posRot = rotella[collegato];
+			zone[collegato] = colori[collegato][posRot];
 			modificati++;
 		}
 	}
 	// poi le altre 2 calano
 	for (let i = 1; i < 3; i++) {
 		const cartaCalante = mazzoInfette[i];
-		if (zone[cartaCalante] > 0) {
-			zone[cartaCalante]--;
+		if (rotella[cartaCalante] > 0) {
+			rotella[cartaCalante]--;
+			const posRot = rotella[cartaCalante];
+			zone[cartaCalante] = colori[cartaCalante][posRot];
 			modificati++;
 		}
 	}

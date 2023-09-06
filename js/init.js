@@ -22,14 +22,14 @@ export let zone = [];
  */
 export let cubetti = [];
 
-export let numRound = 0;
+export let numRound = 1;
 
 export function initZone() {
 	for (const punto of points) {
 		zone[punto] = 0;
 		cubetti[punto] = 0;
 	}
-	numRound = -1;
+	numRound = 0;
 }
 
 export function aumentaRound() {
